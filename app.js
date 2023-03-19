@@ -1,4 +1,5 @@
 const colorInput = document.getElementById('color-picker')
+const getBtn = document.getElementById('get-btn')
 
 colorInput.addEventListener('change', ()=>{
     apiRequest(colorInput.value.slice(-1))
