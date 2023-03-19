@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Color.me</title>
+</head>
+<body>
+    <h1>Color Scheme Generator</h1>
+    <main>
+        <div class="selector-section">
+           <input type="color" name="color-picker" id="color-picker"> 
+           <select name="color-select" id="color-picker">
+                <option value="monochrome">Monochrome</option>  
+                <option value="monochrome-dark">Monochrome Dark</option>  
+                <option value="monochrome-light">Monochrome Light</option>  
+                <option value="analogic">Analogic</option>  
+                <option value="complement">Complement</option>  
+                <option value="analogic-complement">Analogic Complement</option>  
+                <option value="triad">Triad</option>  
+                <option value="quad">Quad</option>  
+           </select>    
+           <button id="get-btn">Get color scheme</button>
+        </div>
+        <div class="colors-display">
+            
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
