@@ -1,0 +1,70 @@
+*{
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: 1px;
+}
+
+.selector-section{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 5px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.colors-display > *{
+    max-width: 254.69px;
+    min-width: 254.69px;
+    flex: content;
+    text-align: center;
+    line-height: 750px;
+    transition: 0.3s;
+    border-radius: 12px;
+}
+.colors-display{
+    display: flex;
+    justify-content: center;
+    height: 750px;
+    gap: 3px;
+}
+
+select{
+    outline: none;
+    flex-grow: 2;
+}
+
+
+.selector-section > * {
+    height: 40px;
+    border: 1.5px solid rgb(227, 227, 227);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#color-picker{
+    padding: none;
+    border: none;
+    outline: none;
+}
+
+span{
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+span:hover{
+    opacity: 0.3;
+}
+
+button{
+    background-color: transparent;
+    transition: 0.2s;
+}
+
+button:hover{
+    background-color: rgba(211, 211, 211, 0.292);
+}
+
+button:active{
+    background-color: rgba(0, 0, 0, 0.185);
+}
