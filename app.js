@@ -24,61 +24,44 @@ window.addEventListener('click', (e)=>{
     }
 })
 
-function apiRequest(hexVal){
-    fetch(`https://www.thecolorapi.com/scheme?hex=${hexVal}&mode=${colorDropdown.value}`)
+function apiRequest(){
+    return fetch(`https://www.thecolorapi.com/scheme?hex=${colorInput.value.replace('#', '')}&mode=${colorDropdown.value}`, {method: "GET"})
         .then(res => res.json())
-        .then(data => {
-            const colorData = data.colors
-            colorData.forEach((color, index)=>{
-                changeColor(index, color.hex.value)
-            })
-        })
+        .then(data => data.colors)
 }
 
 function changeColor(pos, val){
     if(pos === 0){
         colorOne.style.backgroundColor = `${val}`
         colorOne.innerHTML = `<span id='color-one'>${val}</span>`
-        if(val[1] <= 3){
-            colorOne.style.color = 'white'
-        }
     } else if(pos === 1){
         colorTwo.style.backgroundColor = `${val}`
         colorTwo.innerHTML = `<span id='color-two'>${val}</span>`
-        if(val[1] <= 3){
-            colorTwo.style.color = 'white'
-        }
     } else if(pos === 2){
         colorThree.style.backgroundColor = `${val}`
         colorThree.innerHTML = `<span id='color-three'>${val}</span>`
-        if(val[1] <= 3){
-            colorThree.style.color = 'white'
-        }
     } else if(pos === 3){
         colorFour.style.backgroundColor = `${val}`
         colorFour.innerHTML = `<span id='color-four'>${val}</span>`
-        if(val[1] <= 3){
-            colorFour.style.color = 'white'
-        }
     } else if(pos === 4){
         colorFive.style.backgroundColor = `${val}`
         colorFive.innerHTML = `<span id='color-five'>${val}</span>`
-        if(val[1] <= 3){
-            colorFive.style.color = 'white'
-        }
     }
 }
 
 function handleGetBtn(){
-    const userInput = colorInput.value.replace('#', '')
-    apiRequest(userInput)
+    apiRequest().then(data => {
+        data.forEach((color, index)=>{
+            changeColor(index, color.hex.value)
+        })
+    })
     removeAttributes()
 }
 
 function handleColorClick(color) {
         const val = color.textContent
         navigator.clipboard.writeText(val);
-        color.innerHTML = `<span>Copied!</span>`
+        color.innerHTML = `<span id=${color.id}>Copied!</span>`
         setTimeout(()=>{
             color.innerHTML = `<span id=${color.id}>${val}</span>`
         }, 2000)
