@@ -1,6 +1,7 @@
 *{
     font-family: 'Dosis', sans-serif;
     letter-spacing: 1px;
+    color: black;
 }
 
 .selector-section{
@@ -20,7 +21,14 @@
     line-height: 750px;
     transition: 0.3s;
     border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
 }
+
+.colors-display > *:hover{
+    opacity: 0.9;
+}
+
 .colors-display{
     display: flex;
     justify-content: center;
@@ -47,18 +55,22 @@ select{
     outline: none;
 }
 
-span{
+span#color-one, span#color-two, span#color-three, span#color-four, span#color-five{
     cursor: pointer;
     transition: 0.2s;
+    position: relative;
+    top: 400px;
+    font-weight: 900;
 }
 
-span:hover{
+span#color-one:hover, span#color-two:hover, span#color-three:hover, span#color-four:hover, span#color-five:hover{
     opacity: 0.3;
 }
 
 button{
     background-color: transparent;
     transition: 0.2s;
+    font-weight: 900;
 }
 
 button:hover{
